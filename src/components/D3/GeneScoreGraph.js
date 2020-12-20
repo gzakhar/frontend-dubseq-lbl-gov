@@ -1,22 +1,27 @@
 import * as d3 from 'd3';
 
 
-const draw = (f, g) => {
+// Setting constants
+const wWidth = 1000
+const wHeight = 600
 
-    // Setting constants
-    const wWidth = 1000
-    const wHeight = 600
+
+// Creating margins and containers
+const margin = {top: 100, right: 20, bottom: 50, left: 50};
+const graphWidth = wWidth - margin.left - margin.right;
+const graphHeight = wHeight - margin.top - margin.bottom;
+
+
+const draw = (frag, gene) => {
 
     // Creating a svg element in html.
     const svg = d3.select('.canvas')
         .append('svg')
         .attr("width", wWidth)
-        .attr("height", wHeight)
+        .attr("height", wHeight);
 
-    // Creating margins and containers
-    const margin = {top: 100, right: 20, bottom: 50, left: 50};
-    const graphWidth = wWidth - margin.left - margin.right;
-    const graphHeight = wHeight - margin.top - margin.bottom;
+
+    console.log(svg);
 
     // Creating gene chart
     const geneChart = svg.append('g')
@@ -50,15 +55,13 @@ const draw = (f, g) => {
         .text("Fragment Fitness Score");
 
 
-    let data = [g, f];
-
     // MIN-MAX for x axis
-    const minGenePos = d3.min(data[0], d => d.posFrom);
-    const maxGenePos =  d3.max(data[0], d => d.posTo);
+    const minGenePos = d3.min(frag, d => d.posFrom);
+    const maxGenePos =  d3.max(frag, d => d.posTo);
     
     // MIN-MAX for y axis
-    const minScore = d3.min(data[1], d => d.score);
-    const maxScore = d3.max(data[1], d => d.score);
+    const minScore = d3.min(frag, d => d.score);
+    const maxScore = d3.max(frag, d => d.score);
     // const rangeScore = maxScore - minScore;
 
     // Setting the yScale of the data
@@ -79,7 +82,9 @@ const draw = (f, g) => {
 
     // giving the tag <rect> access to all the data
     const rects = graph.selectAll("rect")
-        .data(data[1]);
+        .data(frag);
+    
+    rects.exit().remove();
 
     // Entering fragment onto the chart.
     rects.enter()
@@ -96,7 +101,9 @@ const draw = (f, g) => {
 
     // giving geneChart rects.
     const genes = geneChart.selectAll('rect')
-        .data(data[0]);
+        .data(gene);
+
+    genes.exit().remove();
 
     // Entering genes onto the chart.
     genes.enter()
@@ -114,7 +121,6 @@ const draw = (f, g) => {
         .attr('x', d => xScale(d.posFrom))
         .text(d => d.name);
 
-    genes.exit().remove();
 }
 
 export default draw;

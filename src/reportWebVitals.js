@@ -1,13 +1,5 @@
-const reportWebVitals = onPerfEntry => {
-  if (onPerfEntry && onPerfEntry instanceof Function) {
-    import('web-vitals').then(({ getCLS, getFID, getFCP, getLCP, getTTFB }) => {
-      getCLS(onPerfEntry);
-      getFID(onPerfEntry);
-      getFCP(onPerfEntry);
-      getLCP(onPerfEntry);
-      getTTFB(onPerfEntry);
-    });
+export default function reportWebVitals(metric) {
+	if (metric.label === 'web-vital') {
+	  console.log(metric) // The metric object ({ id, name, startTime, value, label }) is logged to the console
+	}
   }
-};
-
-export default reportWebVitals;
