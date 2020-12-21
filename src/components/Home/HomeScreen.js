@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Aux from '../../hoc/Aux';
-import Navbar from '../UI/Navbar/Navbar';
+import Navbar from '../Header/Header';
 
 
 class HomeScreen extends Component {
@@ -8,7 +8,7 @@ class HomeScreen extends Component {
 	render () {
 		return (
 			<Aux>
-				<Navbar />
+				<Navbar title='HomePage'/>
 				<div>Home</div>
 			</Aux>
 		)

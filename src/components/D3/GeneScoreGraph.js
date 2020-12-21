@@ -12,22 +12,24 @@ const graphWidth = wWidth - margin.left - margin.right;
 const graphHeight = wHeight - margin.top - margin.bottom;
 
 
+window.onload = function() {
+    d3.select(".canvas").append('g');
+}
+
+
 const draw = (frag, gene) => {
 
     // Creating a svg element in html.
     const svg = d3.select('.canvas')
-        .append('svg')
-        .attr("width", wWidth)
-        .attr("height", wHeight);
-
-
-    console.log(svg);
+    .attr("width", wWidth)
+    .attr("height", wHeight);
 
     // Creating gene chart
     const geneChart = svg.append('g')
         .attr('width', graphWidth)
         .attr('height', margin.top)
         .attr('transform', `translate(${margin.left}, 50)`)
+
 
     // Creating the graph
     const graph = svg.append('g')
@@ -57,7 +59,7 @@ const draw = (frag, gene) => {
 
     // MIN-MAX for x axis
     const minGenePos = d3.min(frag, d => d.posFrom);
-    const maxGenePos =  d3.max(frag, d => d.posTo);
+    const maxGenePos = d3.max(frag, d => d.posTo);
     
     // MIN-MAX for y axis
     const minScore = d3.min(frag, d => d.score);
@@ -84,7 +86,6 @@ const draw = (frag, gene) => {
     const rects = graph.selectAll("rect")
         .data(frag);
     
-    rects.exit().remove();
 
     // Entering fragment onto the chart.
     rects.enter()
@@ -96,14 +97,14 @@ const draw = (frag, gene) => {
         .attr('width', d => (xScale(d.posTo) - xScale(d.posFrom)))
         .attr('fill', 'grey');
 
-    rects.exit().remove();
-
+    // graph.selectAll("rect")
+    //     .data(frag)
+    //     .exit()
+    //     .remove();
 
     // giving geneChart rects.
     const genes = geneChart.selectAll('rect')
         .data(gene);
-
-    genes.exit().remove();
 
     // Entering genes onto the chart.
     genes.enter()
