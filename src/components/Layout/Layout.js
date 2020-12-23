@@ -8,13 +8,15 @@ const layout = (props) => (
 		<div className='row'>
 			<div className="col-sm-2">
 				<div className="sidebar">
-					{props.navbarContent}
+					<div className='container'>
+						{props.navbarContent}
+					</div>
 				</div>
 
 			</div>
 			<div className="col-sm-10">
-				<div>
-					{props.graph}
+				<div className='container'>
+					{props.mainContent}
 				</div>
 			</div>
 		</div>

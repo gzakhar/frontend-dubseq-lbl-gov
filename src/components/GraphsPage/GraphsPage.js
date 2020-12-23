@@ -8,7 +8,7 @@ import Layout from '../Layout/Layout';
 class GraphsPage extends Component {
 
 	state = {
-		vis: 'fitLayout'
+		vis: 'home'
 	}
 
 	changeGraph = (e) => {
@@ -25,13 +25,14 @@ class GraphsPage extends Component {
 				<Layout
 					navbarContent={
 						<ol>
-							<li><button className='link' data-value='heatMap' onClick={this.changeGraph}>HeatMap</button></li>
-							<li><button className='link' data-value='fitLayout' onClick={this.changeGraph}>FitLandscape</button></li>
-							<li><button className='link' data-value='compareExperiments' onClick={this.changeGraph}>CompareExperiments</button></li>
-							<li><button className='link' data-value='compareGenes' onClick={this.changeGraph}>CompareGenes</button></li>
+							<li><button className='link' data-value='heatMap' onClick={this.changeGraph}>Heat Map</button></li>
+							<li><button className='link' data-value='fitLayout' onClick={this.changeGraph}>Fit Landscape</button></li>
+							<li><button className='link' data-value='compareExperiments' onClick={this.changeGraph}>Compare Experiments</button></li>
+							<li><button className='link' data-value='compareGenes' onClick={this.changeGraph}>Compare Genes</button></li>
 						</ol>
 					}
-					graph={<Aux>
+					mainContent={<Aux>
+						{this.state.vis === 'home' && <h1>Page for graphs</h1>}
 						{this.state.vis === 'fitLayout' && <ScoreGraph />}
 						{this.state.vis === 'heatMap' && <HeatMap />}
 					</Aux>
