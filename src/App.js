@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import GraphPage from './components/GraphsPage/GraphsPage';
 import HomePage from './components/Home/HomePage';
 import About from './components/About/About';
-import HeatMap from './components/D3Components/HeatMap';
+import TablePage from './components/TablePage/TablePage';
 
 class App extends Component {
 	render() {
@@ -12,7 +12,7 @@ class App extends Component {
 					<Route exact path ='/' component={HomePage}/>
 					<Route path ='/graphPage' component={GraphPage}/>
 					<Route path ='/about' component={About}/>
-					<Route path='/heatMap' component={HeatMap}/>
+					<Route path='/tablePage' component={TablePage}/>
 			</Router>
 		);
 	}
