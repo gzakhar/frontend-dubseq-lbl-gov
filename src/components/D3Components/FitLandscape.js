@@ -16,7 +16,7 @@ class ScoreGraph extends Component {
             fragments: [],
             genes: [],
         }
-        this.updateChart = this.updateChart.bind(this);
+        // this.updateChart = this.updateChart.bind(this);
     }
 
 
@@ -95,7 +95,7 @@ class ScoreGraph extends Component {
             .text("Fragment Fitness Score");
     }
 
-    updateChart() {
+    updateChart = () => {
 
         // Setting constants
         const wWidth = 1000
