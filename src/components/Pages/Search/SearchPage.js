@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import Aux from '../../hoc/Aux';
-import Navbar from '../Header/Header';
+import Aux from '../../../hoc/Aux';
+import Header from '../../Header/Header';
+
 
 
 class SearchPage extends Component {
@@ -12,7 +13,7 @@ class SearchPage extends Component {
 
 		return (
 			<Aux>
-				<Navbar title='Search' />
+				<Header title='Search' />
 				<div className='container'>
 					<div className='card'>
 						<div className='card-body'>

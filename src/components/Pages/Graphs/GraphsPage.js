@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import Aux from '../../hoc/Aux';
-import Header from '../Header/Header';
-import ScoreGraph from '../D3Components/FitLandscape';
-import HeatMap from '../D3Components/HeatMap';
-import Layout from '../Layout/Layout';
+import Aux from '../../../hoc/Aux';
+import Header from '../../Header/Header';
+import ScoreGraph from '../../D3Components/FitLandscape';
+import HeatMap from '../../D3Components/HeatMap';
+import Layout from '../../Layout/Layout';
 
 class GraphsPage extends Component {
 

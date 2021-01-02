@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import Aux from '../../hoc/Aux';
-import Header from '../Header/Header';
+import Aux from '../../../hoc/Aux';
+import Header from '../../Header/Header';
 import { Link } from 'react-router-dom';
-import Layout from '../Layout/Layout';
-import HomePageLayout from '../Layout/HomePageContentLayout';
-import GenomeSVG from '../../images/genome.svg';
-import GeneSVG from '../../images/gene.svg';
-import ExperimentSVG from '../../images/experiment.svg';
-import Card from '../UI/Card/Card';
+import Layout from '../../Layout/Layout';
+import HomePageLayout from '../../Layout/HomeLayout';
+import GenomeSVG from '../../../images/genome.svg';
+import GeneSVG from '../../../images/gene.svg';
+import ExperimentSVG from '../../../images/experiment.svg';
+import Card from '../../UI/Card/Card';
 import './HomePage.css';
 
 

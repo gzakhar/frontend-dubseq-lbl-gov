@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import Header from '../Header/Header';
-import Aux from '../../hoc/Aux';
+import Header from '../../Header/Header';
+import Aux from '../../../hoc/Aux';
 import axios from 'axios';
-import Table from '../UI/Table/Table';
+import Table from '../../UI/Table/Table';
 
 const RenderRow = (props) => {
 	return props.keys.map((key, index) => (

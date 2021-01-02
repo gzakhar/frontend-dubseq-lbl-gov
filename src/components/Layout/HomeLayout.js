@@ -1,9 +1,10 @@
-import React from 'react'
+import React from 'react';
+import Aux from '../../hoc/Aux';
 
 
 const layout = (props) => (
 
-	<div className='container'>
+	<Aux>
 		<h2>Lists</h2>
 		<div class="card-deck">
 			{props.rowOne}
@@ -12,7 +13,7 @@ const layout = (props) => (
 		<div class="card-deck">
 			{props.rowTwo}
 		</div>
-	</div>
+	</Aux>
 )
 
 export default layout;

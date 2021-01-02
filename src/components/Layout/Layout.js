@@ -2,7 +2,7 @@ import React from 'react';
 import Aux from '../../hoc/Aux';
 import "./Layout.css";
 
-const layout = (props) => (
+const Layout = (props) => (
 
 	<Aux>
 		<div className='row'>
@@ -24,4 +24,4 @@ const layout = (props) => (
 
 )
 
-export default layout;
+export default Layout;
