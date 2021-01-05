@@ -3,6 +3,7 @@ import Aux from '../../../hoc/Aux';
 import VerticalLayout from '../../Layout/VerticalLayout';
 import Header from '../../Header/Header';
 import Table from '../../UI/Table/Table';
+import HorizontalLayout from '../../Layout/HorizontalLayout';
 
 
 
@@ -57,20 +58,23 @@ class LandingPage extends Component {
 			}
 		]
 
+		let pageContent_H = [
+			<Table content={firstContent} title='left' />,
+			<Table content={secondContent} title='mid' />,
+			<Table content={thirdContent} title='right' />
+		]
 
-		let pageContent = [
+		let pageContent_V = [
 			<Table content={firstContent} title='first' />,
 			<Table content={secondContent} title='second' />,
-			<Table content={thirdContent} title='third' />
-
+			<HorizontalLayout content={pageContent_H} contentProperty={[30, 30, 30]} />
 		]
 
 		return (
 			<Aux>
 				<Header title="LandingPage" />
 				<div className='container'>
-					
-					<VerticalLayout content={pageContent} />
+					<VerticalLayout content={pageContent_V} />
 				</div>
 			</Aux>
 		)

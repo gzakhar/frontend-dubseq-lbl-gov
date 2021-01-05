@@ -65,7 +65,7 @@ class TablePage extends Component {
 	
 	getExperiments = async () => {
 		
-		let content = await axios.get("http://localhost:8080/experiments")
+		let content = await axios.get("http://localhost:8080/layout")
         await this.setState({ tableContent: content.data });
 	}
 
