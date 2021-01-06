@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Aux from '../../../hoc/Aux';
 import Header from '../../Header/Header';
+import Footer from '../../Footer/Footer';
 import { Link } from 'react-router-dom';
 import Layout from '../../Layout/Layout';
 import HomePageLayout from '../../Layout/HomeLayout';
@@ -26,6 +27,8 @@ class HomeScreen extends Component {
 					</ul>}
 					mainContent={
 						<HomePageLayout
+							rowOneTitle={'Search'}
+							rowTwoTitle={'LandingPage'}
 							rowOne={
 								<Aux>
 									<Card title='By Organism' image={GenomeSVG} body='Link to list of organisms.' link='/listPage/1' />
@@ -40,6 +43,7 @@ class HomeScreen extends Component {
 							} />
 					}
 				/>
+				<Footer />
 			</Aux>
 		)
 	}

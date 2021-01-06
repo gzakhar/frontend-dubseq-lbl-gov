@@ -4,6 +4,7 @@ import VerticalLayout from '../../Layout/VerticalLayout';
 import Header from '../../Header/Header';
 import Table from '../../UI/Table/Table';
 import HorizontalLayout from '../../Layout/HorizontalLayout';
+import Histogram from '../../D3Components/Histogram';
 
 
 
@@ -66,8 +67,8 @@ class LandingPage extends Component {
 
 		let pageContent_V = [
 			<Table content={firstContent} title='first' />,
-			<Table content={secondContent} title='second' />,
-			<HorizontalLayout content={pageContent_H} contentProperty={[30, 30, 30]} />
+			<HorizontalLayout content={[<Histogram title="f"/>, <Histogram title="s"/>]} contentProperty={[50]} />,
+			<HorizontalLayout content={pageContent_H} contentProperty={[20, 20, 20]} />
 		]
 
 		return (
